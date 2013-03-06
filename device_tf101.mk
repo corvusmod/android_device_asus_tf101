@@ -119,7 +119,7 @@ PRODUCT_COPY_FILES += \
     frameworks/base/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
     frameworks/base/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml \
     frameworks/base/data/etc/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml \
-    packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:system/etc/permissions/android.software.live_wallpaper.xml \
+    #packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:system/etc/permissions/android.software.live_wallpaper.xml \
     $(LOCAL_PATH)/prebuilt/etc/permissions/com.asus.hardware.00.xml:system/etc/permissions/com.asus.hardware.00.xml \
     $(LOCAL_PATH)/prebuilt/etc/permissions/com.asus.hardware.01.xml:system/etc/permissions/com.asus.hardware.01.xml \
     $(LOCAL_PATH)/prebuilt/etc/permissions/com.asus.hardware.08.xml:system/etc/permissions/com.asus.hardware.08.xml \
