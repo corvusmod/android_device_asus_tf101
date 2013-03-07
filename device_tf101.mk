@@ -31,15 +31,14 @@ endif
 # Files needed for boot image
 PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel \
-    $(LOCAL_PATH)/ramdisk/init:root/init \
     $(LOCAL_PATH)/ramdisk/sbin/adbd:root/sbin/adbd \
     $(LOCAL_PATH)/ramdisk/sbin/ueventd:root/sbin/ueventd \
     $(LOCAL_PATH)/ramdisk/default.prop:root/default.prop \
-    $(LOCAL_PATH)/ramdisk/init.00.rc:root/init.00.rc \
-    $(LOCAL_PATH)/ramdisk/init.01.rc:root/init.01.rc \
-    $(LOCAL_PATH)/ramdisk/init.08.rc:root/init.08.rc \
+    #$(LOCAL_PATH)/ramdisk/init.00.rc:root/init.00.rc \
+    #$(LOCAL_PATH)/ramdisk/init.01.rc:root/init.01.rc \
+    #$(LOCAL_PATH)/ramdisk/init.08.rc:root/init.08.rc \
     $(LOCAL_PATH)/ramdisk/init.goldfish.rc:root/init.goldfish.rc \
-    $(LOCAL_PATH)/ramdisk/init.rc:root/init.rc \
+    #$(LOCAL_PATH)/ramdisk/init.rc:root/init.rc \
     $(LOCAL_PATH)/ramdisk/init.ventana.rc:root/init.ventana.rc \
     $(LOCAL_PATH)/ramdisk/ueventd.goldfish.rc:root/ueventd.goldfish.rc \
     $(LOCAL_PATH)/ramdisk/ueventd.rc:root/ueventd.rc \
@@ -156,7 +155,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/xbin/rfcomm:system/xbin/rfcomm \
     $(LOCAL_PATH)/prebuilt/xbin/ps3bttest:system/xbin/ps3bttest \
     $(LOCAL_PATH)/prebuilt/bin/sixpair:system/bin/sixpair \
-    $(LOCAL_PATH)/bootanimation.zip:system/media/bootanimation.zip \
+    #$(LOCAL_PATH)/bootanimation.zip:system/media/bootanimation.zip \
     $(LOCAL_PATH)/prebuilt/etc/permissions/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \
     $(LOCAL_PATH)/prebuilt/lib/libhuawei-ril.so:system/lib/libhuawei-ril.so \
     $(LOCAL_PATH)/prebuilt/etc/init.d/02ppp:system/etc/init.d/02ppp \

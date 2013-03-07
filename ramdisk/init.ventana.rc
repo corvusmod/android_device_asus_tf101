@@ -3,6 +3,9 @@ import init.nv_dev_board.usb.rc
 on early-init
     mount debugfs debugfs /sys/kernel/debug
 
+#Added for B2G
+    import /init.b2g.rc
+
     export EXTERNAL_STORAGE /mnt/sdcard
     mkdir /mnt/sdcard 0000 system system
     # for backwards compatibility
@@ -38,6 +41,11 @@ on post-fs-data
 
     # Set indication (checked by vold) that we have finished this action
     setprop vold.post_fs_data_done 1
+
+#Permissions for B2G
+chmod 0755 /system/b2g/b2g
+chmod 0755 /system/b2g/updater
+chmod 0755 /system/b2g/plugin-container
 
 on boot
      insmod /system/lib/modules/battery_rvsd.ko
