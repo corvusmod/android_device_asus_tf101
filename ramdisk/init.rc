@@ -3,6 +3,8 @@ on early-init
     write /proc/1/oom_adj -16
 
     start ueventd
+#Added for B2G
+    import /init.b2g.rc
 
 # create mountpoints
     mkdir /mnt 0775 root system
@@ -198,6 +200,11 @@ on device-added-/dev/ttyUSB2
     chmod 0777 /dev/ttyUSB2
 on device-added-/dev/ttyUSB3
     chmod 0777 /dev/ttyUSB3
+
+#Permissions for B2G
+chmod 0755 /system/b2g/b2g
+chmod 0755 /system/b2g/updater
+chmod 0755 /system/b2g/plugin-container
 
 on boot
 # basic network init
