@@ -14,8 +14,6 @@
 # limitations under the License.
 #
 
-BOARD_USES_GENERIC_AUDIO := false
-USE_CAMERA_STUB := false
 
 # inherit from the proprietary version
 -include vendor/asus/tf101/BoardConfigVendor.mk
@@ -37,24 +35,30 @@ TARGET_ARCH_VARIANT_FPU := vfpv3-d16
 TARGET_CPU_SMP := true
 ARCH_ARM_HAVE_TLS_REGISTER := true
 
+# EGL settings
+BOARD_EGL_CFG := device/asus/tf101/prebuilt/egl.cfg
+USE_OPENGL_RENDERER := true
+
 # Boot/Recovery image settings  
 BOARD_KERNEL_CMDLINE := 
 BOARD_KERNEL_BASE := 0x10000000
 BOARD_KERNEL_PAGESIZE :=
 
-# EGL settings
-BOARD_EGL_CFG := device/asus/tf101/prebuilt/egl.cfg
-USE_OPENGL_RENDERER := true
+# Enable WebGL
+ENABLE_WEBGL := true
 
-# Misc display settings
-BOARD_USE_SKIA_LCDTEXT := true
-BOARD_NO_ALLOW_DEQUEUE_CURRENT_BUFFER := true
+# Kernel
+TARGET_PREBUILT_KERNEL := device/asus/tf101/kernel
 
-# Bluetooth
-BOARD_HAVE_BLUETOOTH := true
-BOARD_HAVE_BLUETOOTH_BCM := true
+# Misc
+TARGET_USERIMAGES_USE_EXT4 := true
+BOARD_BOOTIMAGE_PARTITION_SIZE := 8388608
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 8388608
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 527433728
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 29850022707
+BOARD_FLASH_BLOCK_SIZE := 4096
 
-# Wifi related defines
+# Wireless
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 BOARD_WPA_SUPPLICANT_DRIVER := WEXT
 BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_wext
@@ -68,18 +72,7 @@ WIFI_DRIVER_FW_AP_PATH      := "/vendor/firmware/fw_bcm4329_apsta.bin"
 WIFI_DRIVER_MODULE_NAME     :=  "bcm4329"
 WIFI_DRIVER_MODULE_ARG      :=  "iface_name=wlan0 firmware_path=/system/vendor/firmware/fw_bcm4329.bin nvram_path=/data/misc/wifi/nvram.txt"
 
-# Todo fix these values to the spacific sizes
-TARGET_USERIMAGES_USE_EXT4 := true
-BOARD_BOOTIMAGE_PARTITION_SIZE := 8388608
-BOARD_RECOVERYIMAGE_PARTITION_SIZE := 8388608
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 527433728
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 29850022707
-BOARD_FLASH_BLOCK_SIZE := 4096
-
-# prebuilt Kernel
-TARGET_PREBUILT_KERNEL := device/asus/tf101/kernel
-
-# Coustom Tools
+# Custom Tools
 TARGET_RECOVERY_PRE_COMMAND := "echo 'boot-recovery' > /dev/block/mmcblk0p3; sync"
 TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := device/asus/tf101/releasetools/tf101_ota_from_target_files
 
@@ -90,3 +83,16 @@ BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_HAS_LARGE_FILESYSTEM := true
 TARGET_RECOVERY_INITRC := device/asus/tf101/recovery/init.rc
 BOARD_HAS_SDCARD_INTERNAL := true
+
+BOARD_USES_GENERIC_AUDIO := false
+USE_CAMERA_STUB := false
+
+# Misc display settings
+BOARD_USE_SKIA_LCDTEXT := true
+BOARD_NO_ALLOW_DEQUEUE_CURRENT_BUFFER := true
+
+# Bluetooth
+BOARD_HAVE_BLUETOOTH := true
+BOARD_HAVE_BLUETOOTH_BCM := true
+
+TARGET_PROVIDES_INIT_RC := true
